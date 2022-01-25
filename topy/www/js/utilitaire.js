@@ -1,12 +1,29 @@
+function createListVisu(mapPokemon){ 
+    var generalFrag = document.createDocumentFragment();
+    for(let i=1; i<=5;i++){
+        select = document.createElement("SELECT");
+        var a = document.createAttribute("id");
+        a.value = "top"+i;
+        select.setAttributeNode(a);
+        
+        for (const [key, value] of mapPokemon.entries()) {
+            console.log(`${key} = ${value.name}`);
+            
+            option = document.createElement("OPTION");
+            option.innerText = key;
+            select.appendChild(option);
+        }  
 
-function createListVisu(arrayPokemon){
-    document.write("<FORM>"+
-    "<SELECT NAME='SelectMenu'>");
-    
-Nombre = arrayPokemon.length;
-for (var i = 1; i <= Nombre; i++){
-    document.write("<OPTION>" +arrayPokemon.name+"</SELECT>");
+        generalFrag.appendChild(select); 
+        document.getElementById("div5ListPokemon").appendChild(generalFrag);
+    }
+
+    console.log('page top is fully loaded'); 
+
 }
-document.write("</FORM>");
 
+function addTopInListTop(formTop){
+    console.log('alerte ! sa passe ici');
+   
+    
 }
