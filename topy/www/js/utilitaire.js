@@ -1,5 +1,6 @@
 function createListVisu(mapPokemon){ 
     var generalFrag = document.createDocumentFragment();
+
     for(let i=1; i<=5;i++){
         select = document.createElement("SELECT");
         var a = document.createAttribute("id");
@@ -26,4 +27,41 @@ function addTopInListTop(formTop){
     console.log('alerte ! sa passe ici');
    
     
+}
+function listTopCreateList (){
+    var generalFrag = document.createDocumentFragment();
+            console.log('taille du localStorage : '+localStorage.length);
+            for (var key in localStorage){
+                let objLinea = localStorage.getItem(key);
+                let objJson = JSON.parse(objLinea);
+        
+                //si l'object existe et si l'object ressemble à mes object dans localstorage ( des extention peuvent avoir des info dans localstorage)
+                if (objJson !== null && objJson.nameTop!== null){
+                    console.log("non null : "+objJson.nameTop);
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.innerText = objJson.nameTop;
+                    a.href="view.html";
+                    
+                    a.onclick="createView('"+objJson.nameTop+"')";
+
+                    var onclick = document.createAttribute("onClick");
+                    onclick.value = "createView('"+objJson.nameTop+"')";;
+                    a.setAttributeNode(onclick);
+                    
+                    li.appendChild(a);
+                    generalFrag.appendChild(li); 
+
+                }
+
+
+            }
+            document.getElementById("lTop").appendChild(generalFrag);
+}
+function createView(nameList){
+    localStorage["nameListPrincipale"] = nameList;
+}
+
+function getCreateView(){
+    console.log("lol "+ localStorage.getItem("nameListPrincipale"));
 }

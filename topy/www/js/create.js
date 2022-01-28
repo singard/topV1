@@ -27,5 +27,11 @@ function addTopInListTop(formTop){
     console.log('pokemon4 :'+pokemon4);
     console.log('pokemon5 :'+pokemon5);
     
+    let objLinea = JSON.stringify(souslistPokemon);
+    localStorage.setItem(souslistPokemon.nameTop,objLinea);
+
+    console.log("json "+obj.nameTop);
+    alert("création du top : "+nameTop+ " réussi !");
+
 }
 

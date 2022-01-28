@@ -23,60 +23,38 @@
     <meta name="color-scheme" content="light dark">
  
     <link rel="stylesheet" href="css/index.css">
-    <title>create</title>
+    <title>liste des top</title>
     <script type="text/javascript" src="js/item.js"></script>
     <script type="text/javascript" src="js/utilitaire.js"></script>
+    <script type="text/javascript" src="js/create.js"></script>
 </head>
 
 <body>
     <div class="header">
         <h1>TOPY le top de tout les top !</h1>
     </div>
-    
-    <div>
-        <FORM>
-            <SELECT id='SelectMenu'>
-              
-            </SELECT>
-        </FORM>
-        <script type="module" >
-
-        var frag = document.createDocumentFragment(),
-        option = document.createElement("OPTION");
-        option.innerText = "--test--";
-        frag.appendChild(option);
-        console.log("sa passe ici");
-        document.getElementById("SelectMenu").appendChild(frag);
-
-
-        
-       
-for (pokemon of arrayPokemon) {
-	option = document.createElement("OPTION");
-        option.innerText = pokemon.name;
-        frag.appendChild(option);
-        console.log("sa passe ici");
-        document.getElementById("SelectMenu").appendChild(frag);
-}
-     
-        
-    
-        console.log('page is fully loaded');
-     
-        </script>
+    <div >
+        <navi>
+            <ul>
+              <li><strong>Accueil</strong></li>
+              <li><a href="index.html">création de top</a></li>
+              <li><a href="listTop.html">list crée</a></li>
+            </ul>
+        </nav> 
     </div>
     
-    
+    <div>
+        <h1>Liste des top Pokemon</h1>
+    <ul id="lTop">
+      <li>
+          <a href="view.html" onclick="createView('le pokemon du pokemon')">--- exemple ---</a>
+        </li>
 
-
-    <div class="app">
-        <h1>create</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
-
-     
+    </ul>
+             
+        <script type="module" >
+            listTopCreateList ();
+        </script>
     </div>
 
     <script src="cordova.js"></script>

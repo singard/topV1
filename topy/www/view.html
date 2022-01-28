@@ -14,57 +14,116 @@
             }
         });
     </script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+    crossorigin="anonymous"
+  />
 
 
     <meta charset="utf-8">
-
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/utilitaire.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
     <title>view</title>
-<script src="js/item.js"></script>
+
+    
 </head>
 
 <body>
     <div class="header">
         <h1>TOPY le top de tout les top !</h1>
     </div>
-    <div>
+    <div >
         <navi>
             <ul>
               <li><strong>Accueil</strong></li>
-              <li><a href="create.html">create</a></li>
-              <li><input type="button" value="create top" onclick="create.html"></li>
-              <li><a href="index.html">index</a></li>
-              <li><a href="view.html">view</a></li>
-            
+              <li><a href="index.html">création de top</a></li>
+              <li><a href="listTop.html">list crée</a></li>
             </ul>
         </nav> 
     </div>
 
+<div id="list">
 
+</div>
 
-    <div class="app">
-        <h1>view</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
-
-        <script>
-            console.log(lePokemmon.name);
-            console.log(lePokemmon.label);
-            console.log(lePokemmon.image);
-            lePokemmon.label
-        </script>
-        
+    <script type="module" >
+     getCreateView();
+    
+     const divManga = `
+<div class="col-12 col-md-4">
+    <div onclick="openInAppBrowser('__link__')">
+      <div class="card">
+      <img src="img/__src__" class="card-img-top" />
+      <div class="card-body">
+          <h5 class="card-title"> __title__</h5>
+          <p class="card-text">
+              __description__
+          </p>
+      </div>
+      </div>
     </div>
+</div>
+`;
 
-    <script type="text/javascript" src="js/routeur.js"></script>
+const htmlToElement = (html) => {
+  const template = document.createElement("template");
+  html = html.trim(); // Never return a text node of whitespace as the result
+  template.innerHTML = html;
+  return template.content.firstChild;
+};
+
+
+    const divList = document.getElementById("list");
+    var laListname = localStorage.getItem("nameListPrincipale");
+    var objLinea = localStorage.getItem(laListname);
+    var objJson = JSON.parse(objLinea);
+
+    console.log("result : "+objJson);
+    console.log("result : "+objJson.listPokemon[0].name);
+
+    //listPokemon
+
+    var list = objJson.listPokemon;
+    console.log(list);
+
+    list.forEach(function (item, index) {
+        
+        console.log(item, index);
+        const newDivManga = divManga
+        .replace("__src__", item.image)
+        .replace("__title__", item.name)
+        .replace("__description__", item.label);
+        divList.appendChild(htmlToElement(newDivManga));
+    
+    });
+   
+
+                
+
+  //json.forEach((manga, i) => {
+    const newDivManga = divManga;
+      //.replace("__link__", manga.link)
+      //.replace("__src__", manga.img)
+      //.replace("__top__", i + 1)
+      //.replace("__title__", manga.name)
+      //.replace("__description__", manga.description);
+    divList.appendChild(htmlToElement(newDivManga));
+  //});
+
+
+
+
+
+    </script>
+
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
 </body>
