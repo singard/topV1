@@ -19,10 +19,10 @@ var Dialga =  new pokemon("Dialga",
  "Dialga.png");
 var Palkia =  new pokemon("Palkia",
  "Palkia de type Eau et Dragon est le Pokémon légendaire emblème de la version Pokémon Perle. Il est le maître de l'espace, et le rival de Dialga, maître du temps.",
- "Dialga.png");
+ "Palkia.png");
 var Regigigas =  new pokemon("Regigigas",
  "Regigigas est un Pokémon légendaire de la quatrième génération de type Normal.À l'instar des autres golems, il fait partie du groupe des colosses légendaires, dont il est également le roi et le créateur. ",
- "Dialga.png");
+ "Regigigas.png");
 var Giratina =  new pokemon("Giratina",
  "Giratina est un Pokémon légendaire de type Spectre et Dragon de la quatrième génération. Il possède deux formes : la classique dite Alternative, connue depuis Pokémon Diamant et Perle, et l'Originelle, forme sous laquelle il apparaît dans Pokémon Platine. ",
  "Giratina.png");

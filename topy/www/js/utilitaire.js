@@ -32,7 +32,8 @@ function listTopCreateList (){
     var generalFrag = document.createDocumentFragment();
             console.log('taille du localStorage : '+localStorage.length);
             for (var key in localStorage){
-                let objLinea = localStorage.getItem(key);
+                if (key !== "nameListPrincipale"){
+                    let objLinea = localStorage.getItem(key);
                 let objJson = JSON.parse(objLinea);
         
                 //si l'object existe et si l'object ressemble à mes object dans localstorage ( des extention peuvent avoir des info dans localstorage)
@@ -54,6 +55,8 @@ function listTopCreateList (){
 
                 }
 
+                }
+                
 
             }
             document.getElementById("lTop").appendChild(generalFrag);
