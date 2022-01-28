@@ -6,6 +6,13 @@ function createListVisu(mapPokemon){
         var a = document.createAttribute("id");
         a.value = "top"+i;
         select.setAttributeNode(a);
+        a = document.createAttribute("class");
+        a.value = "form-select form-select-lg mb-3";
+        select.setAttributeNode(a);
+        a = document.createAttribute("aria-label");
+        a.value = ".form-select-lg example";
+        select.setAttributeNode(a);
+       
         
         for (const [key, value] of mapPokemon.entries()) {
             console.log(`${key} = ${value.name}`);
