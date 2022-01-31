@@ -6,11 +6,11 @@
     
     "icons": [
       {
-       "src": "img/144x144.png",
+       "src": "img/rwby144X144.jpg",
        "sizes": "144x144",
        "type": "image/png"
      }, {
-       "src": "img/50x50.png",
+       "src": "img/rwby50X50.jpg",
        "sizes": "50x50",
        "type": "image/png"
      }]

@@ -1,5 +1,6 @@
 var listOfTop = [];
 function addTopInListTop(formTop){
+    var formTop =formTop;
     var nameTop = document.formTop.nameTop.value;
     var pokemon1 = document.formTop.top1.value;
     var pokemon2 = document.formTop.top2.value;

@@ -1,4 +1,5 @@
 function createListVisu(mapPokemon){ 
+
     var generalFrag = document.createDocumentFragment();
 
     for(let i=1; i<=5;i++){
@@ -36,6 +37,7 @@ function addTopInListTop(formTop){
     
 }
 function listTopCreateList (){
+
     var generalFrag = document.createDocumentFragment();
             console.log('taille du localStorage : '+localStorage.length);
             for (var key in localStorage){
