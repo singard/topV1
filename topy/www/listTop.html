@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link rel="manifest" href="manifest.json" />
+
+
+
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+ 
+    <link rel="stylesheet" href="css/index.css">
+    <title>liste des top</title>
+    <script type="text/javascript" src="js/item.js"></script>
+    <script type="text/javascript" src="js/utilitaire.js"></script>
+    <script type="text/javascript" src="js/create.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>TOPY le top de tout les top !</h1>
+    </div>
+    <div >
+        <navi>
+            <ul>
+              <li><strong>Accueil</strong></li>
+              <li><a href="index.html">création de top</a></li>
+              <li><a href="listTop.html">list crée</a></li>
+            </ul>
+        </nav> 
+    </div>
+    
+    <div>
+        <h1>Liste des top Pokemon</h1>
+    <ul id="lTop">
+      <li>
+          <a href="view.html" onclick="createView('le pokemon du pokemon')">--- exemple ---</a>
+        </li>
+
+    </ul>
+             
+        <script type="module" >
+            listTopCreateList ();
+        </script>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
