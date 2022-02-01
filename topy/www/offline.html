@@ -5,29 +5,54 @@
 <head>
     <meta charset="utf-8">
 
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+   
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="css/index.css">
     <title>OFFLINE</title>
+    <style>
+        .div {
+         
+            border: 3px solid #4287f5;
+        }
+        h2,
+        h3 {
+          text-align: center;
+          color: #4287f5;
+        }
+        img {
+  border-radius: 8px;
 
+  position: center;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+      </style>
 
 
 </head>
 
 <body>
-    <div class="app">
-        <h1>OFFLINE</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+    <h2>offline</h2>
+    <h3>Le site est actuellement hors connection</h3>
+
+        <div class="div">
+        
+       
+            <img src="img/offline.gif" class="center">
+      
         </div>
-    </div>
-    <script src="cordova.js"></script>
-    <script src="js/index.js"></script>
+    
+
+
+    
+    
 </body>
 
 </html>

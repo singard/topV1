@@ -4,6 +4,20 @@ const OFFLINE_URL = "offline.html";
 
 /** FUNCTIONS */
 
+const ORIGIN_URL = `${location.protocol}//${location.host}`;
+const CACHED_FILES = [
+  OFFLINE_URL,
+  `${ORIGIN_URL}/offline.html`,
+  `${ORIGIN_URL}/img/offline.gif`,
+];
+const waitUntilInstallationPromise = () =>
+  new Promise((resolve) => {
+    caches.open(CACHE_NAME).then((cache) => {
+      cache.addAll(CACHED_FILES).then(resolve);
+    });
+  });
+
+
 /** Fetch */
 
 const respondWithFetchPromiseNavigate = (event) =>
@@ -31,13 +45,16 @@ const respondWithFetchPromiseNavigate = (event) =>
     });
   });
 
-const fetchSW = (event) => {
-  // We only want to call event.respondWith() if this is a navigation request
-  // for an HTML page.
-  if (event.request.mode === "navigate") {
-    event.respondWith(respondWithFetchPromiseNavigate(event));
-  }
-};
+  const fetchSW = (event) => {
+    // We only want to call event.respondWith() if this is a navigation request
+    // for an HTML page.
+    if (event.request.mode === "navigate") {
+      event.respondWith(respondWithFetchPromiseNavigate(event));
+    } else if (CACHED_FILES.includes(event.request.url)) {
+      event.respondWith(caches.match(event.request));
+    }
+  };
+  
 
 /*********************************** */
 
